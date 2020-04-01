@@ -13,12 +13,14 @@ const MyPosts = (props) => {
         likesCount={post.likesCount}/>);
 
       const addPost = () => {
+        //props.addPost();
         props.dispatch( addPostActionCreator());
       }
       const newPostElement = React.createRef();
 
       const onPostChange = () => {
         let text = newPostElement.current.value;
+        //props.updateNewPostText(text);
         props.dispatch(updateNewPostTextActionCreator(text));
       }
   return (
