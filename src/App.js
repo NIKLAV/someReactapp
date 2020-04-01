@@ -5,6 +5,7 @@ import Navbar from './components/navbar/Navbar';
 import Profile from './components/profile/Profile';
 import Dialogs from './components/dialogs/dialogs';
 import { Route, BrowserRouter } from 'react-router-dom';
+import DialogsContainer from './components/dialogs/dialogs_container';
 
 
 
@@ -17,10 +18,10 @@ const App = (props) => {
       <Navbar />
       <div className="app__wrapper__content">
         <Route path='/dialogs' 
-          render={() => <Dialogs store={props.store}/>}/>
+          render={() => <DialogsContainer store={props.store}/>}/>
         <Route path='/profile' 
           render={() => <Profile 
-          state={props.state.profilePage} dispatch={props.dispatch} store={props.store} />}/>
+          store={props.store} />}/>
       </div>
     </div>
   </BrowserRouter>
