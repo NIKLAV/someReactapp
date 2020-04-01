@@ -1,0 +1,21 @@
+.nav {
+    grid-area: n;
+    background-color: hotpink;
+    height: 100%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+  }
+  .nav li {
+    padding: 20px
+  }
+  .nav__link {
+    color: white;
+    text-decoration: none;
+    
+  }
+  .nav a.active {
+    color: gold;
+  }
