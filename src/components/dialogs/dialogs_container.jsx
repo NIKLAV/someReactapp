@@ -4,11 +4,11 @@ import DialogItem from './dialogitem/dialogitem';
 import Message from './message/message';
 import { updateNewMessageBodyCreator, sendMessageCreator } from '../../redux/dialogs_reducer';
 import Dialogs from './dialogs';
-import StoreContext from '../../storeContext';
 
 
+import {connect} from "react-redux";
 
-const DialogsContainer = (props) => {
+/* const DialogsContainer = (props) => {
     
     return (
         <StoreContext.Consumer> 
@@ -30,6 +30,26 @@ const DialogsContainer = (props) => {
             }
         </StoreContext.Consumer>       
     )
+} */
+
+
+const mapStateToProps = (state) => {
+    return {
+        dialogsPage: state.dialogsPage
+    }
+
 }
+const mapDispatchToProps = (dispatch) => {
+    return {
+        updateNewMessageBody: (body) => {
+            dispatch(updateNewMessageBodyCreator(body))
+        },
+        sendMessage: () => {
+            dispatch(sendMessageCreator())
+        }
+    }
+}
+
+const DialogsContainer = connect(mapStateToProps, mapDispatchToProps) (Dialogs)
 
 export default DialogsContainer;
