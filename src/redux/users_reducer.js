@@ -8,10 +8,7 @@ const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING'
 
 let initialState = {
   users: [
-    /* {id: 1, photoUrl: 'https://dota2.ru/img/heroes/kunkka/portrait.jpg', followed: false, fullname: 'VASYAN', status: 'active', location: {city:'DONETSK', country: 'DPR'}},
-    {id: 2, photoUrl: 'https://dota2.ru/img/heroes/kunkka/portrait.jpg', followed: true, fullname: 'CTACYAH', status: 'online', location: {city:'4epenoBets', country: 'Russia'}},
-    {id: 3, photoUrl: 'https://dota2.ru/img/heroes/kunkka/portrait.jpg', followed: false, fullname: 'KASYAN', status: 'offline', location: {city:'Lipeck', country: 'Russia'}},
-    {id: 4, photoUrl: 'https://dota2.ru/img/heroes/kunkka/portrait.jpg', followed: true, fullname: 'VALERYAN', status: 'e6etcya', location: {city:'Bigcity', country: 'CTpaHa'}} */ 
+ 
 ],
   pageSize: 5,
   totalUsersCount: 0,
@@ -58,42 +55,42 @@ const  usersReducer = (state = initialState, action) => {
     }
   }
 
-export const  followAC = (userId) => {
+ export const  follow = (userId) => {
     return {
       type: FOLLOW,
       userId
     }
   }
   
-  export const unfollowAC = (userId) => {
+  export const unfollow = (userId) => {
     return {
       type:  UNFOLLOW, 
       userId
     }
   }
 
-  export const setUsersAC = (users) => {
+  export const setUsers = (users) => {
     return {
       type:  SET_USERS, 
       users
     }
   }
 
-  export const setCurrentPageAC = (currentPage) => {
+  export const setCurrentPage = (currentPage) => {
     return {
       type: SET_CURRENT_PAGE,
       currentPage
     }
   }
 
-  export const setUsersTotalCountAC = (totalUsersCount) => {
+  export const setTotalUsersCount = (totalUsersCount) => {
     return {
       type: SET_TOTAL_USERS_COUNT,
       count: totalUsersCount
     }
   }
 
-  export const toggleIsFetchingAC = (isFetching) => {
+  export const toggleIsFetching = (isFetching) => {
     return {
       type: TOGGLE_IS_FETCHING,
       isFetching
