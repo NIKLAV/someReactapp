@@ -4,8 +4,8 @@ import styles from './preloader.module.css'
 
 const Preloader = (props) => {
     return <div className={styles.center}>
-        <img  src={preloader}/>
-    </div>
+               <img  src={preloader}/>
+           </div>
 }
 
 export default Preloader;
